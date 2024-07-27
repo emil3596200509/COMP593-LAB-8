@@ -10,7 +10,7 @@ from faker import Faker
 from random import random, choice
 
 # Determine the path of the database
-script_dir = os.path.dirname(os.path.abspath(_file_))
+script_dir = os.path.dirname(os.path.abspath(__file__))
 db_path = os.path.join(script_dir, 'social_network.db')
 
 def main():
