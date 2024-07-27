@@ -48,5 +48,5 @@ def save_married_couples_csv(married_couples, csv_path):
     df = pd.DataFrame(married_couples, columns=["Person 1", "Person 2", "Anniversary"])
     df.to_csv(csv_path, index=False)
 
-if _name_ == '_main_':
+if __name__ == '_main_':
    main()
