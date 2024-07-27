@@ -39,7 +39,7 @@ def create_relationships_table():
 
 def populate_relationships_table():
     """Adds 100 random relationships to the DB"""
-    con= sqlite3.connect(db_path)
+    con = sqlite3.connect(db_path)
     cur = con.cursor()
     add_relationship = """
         INSERT INTO relationships
@@ -58,11 +58,11 @@ def populate_relationships_table():
             person2_id = fake.random_int(min=1, max=100)
             while person1_id == person2_id:
                 person2_id = fake.random_int(1, 100)
-            relationship_type = choice(['Friend', 'Spouse', 'Girlfriend'])
+            relationship_type = choice(['Friend', 'Spouse', 'Family'])
             start_date = fake.date_between(start_date='-50y', end_date='today')
             new_relationship = (person1_id, person2_id, relationship_type, start_date)
             cur.execute(add_relationship, new_relationship)
     con.commit()
 
-if __name__ == '_main_':
+if __name__ == '__main__':
    main()
